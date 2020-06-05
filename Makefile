@@ -14,7 +14,7 @@ CONFIGDIRS += $(abspath zfs-config)
 export CONFIGDIRS
 
 # The minimal install system is built as this arch, not the installed server
-CONFIG_DEBIAN_ARCH := i386
+CONFIG_DEBIAN_ARCH := amd64
 export CONFIG_DEBIAN_ARCH
 
 CONFIG_DEBIAN_VER := buster
@@ -233,3 +233,4 @@ clean:
 reallyclean:
 	$(foreach dir,$(SUBDIRS),$(MAKE) -C $(dir) $@ &&) true
 	rm -f $(REALLYCLEAN_FILES)
+	rm boot.iso combined.initrd size.txt
