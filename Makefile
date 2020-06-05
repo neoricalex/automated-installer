@@ -1,8 +1,3 @@
-#
-# Build an installer image to boot a bare-metal server and install a ZFS root
-# disk
-#
-
 all: bootable-images
 
 SUBDIRS := debian kernel
@@ -23,7 +18,7 @@ SHELL_URL := https://github.com/tianocore/edk2/raw/UDK2018/ShellBinPkg/UefiShell
 
 ISODIR := iso
 DISK_IMAGE := $(ISODIR)/boot.img
-ISO_IMAGE := boot.iso
+ISO_IMAGE := nfdos.iso
 
 .PHONY: bootable-images
 bootable-images: $(DISK_IMAGE) $(ISO_IMAGE)
@@ -233,4 +228,4 @@ clean:
 reallyclean:
 	$(foreach dir,$(SUBDIRS),$(MAKE) -C $(dir) $@ &&) true
 	rm -f $(REALLYCLEAN_FILES)
-	rm boot.iso combined.initrd size.txt
+	rm nfdos.iso combined.initrd size.txt
