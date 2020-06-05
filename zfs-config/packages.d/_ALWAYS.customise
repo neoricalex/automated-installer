@@ -11,7 +11,7 @@ VERSION=$(git describe --always --dirty)
 popd
 
 echo "BUILDER_INSTALL_VER=$VERSION" >>${DEBOOT}/etc/os-release
-echo "Auto Installer \S{BUILDER_INSTALL_VER}" >${DEBOOT}/etc/issue
+echo "NFDOS Builder \S{BUILDER_INSTALL_VER}" >${DEBOOT}/etc/issue
 
 cat ${DEBOOT}/etc/issue.bak >>${DEBOOT}/etc/issue
 rm ${DEBOOT}/etc/issue.bak
